@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 
 .axisContainer {
   position: fixed;
@@ -48,7 +51,7 @@
 
   padding: 0 10px 0 10px;
   text-align: center;
-  font-family: jgs;
+  font-family: jgs9;
   font-size: 120px;
   font-style: normal;
   font-weight: 400;
@@ -122,11 +125,13 @@
 
 .secondBlockPic {
   background: url("images/dog1.jpg") lightgray 50% / cover no-repeat;
+  animation: dog 600ms steps(1, end) infinite;
 }
 
 .thirdBlock {
   background: black;
   display: flex;
+  overflow: hidden;
 }
 
 .turningCircle {
@@ -172,6 +177,7 @@
   position: relative;
   align-items: center;
   height: 308px;
+  width: 100%;
 }
 
 .runningStringOverflow {
@@ -188,7 +194,7 @@
   text-wrap: nowrap;
   width: 2400px;
   color: #000;
-  font-family: jgs;
+  font-family: jgs9;
   font-size: 240px;
   font-style: normal;
   font-weight: 400;
@@ -200,7 +206,7 @@
 }
 
 .arrowsOverflow {
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -266,6 +272,10 @@
   font-weight: 400;
   line-height: 106%; /* 38.16px */
   text-transform: uppercase;
+}
+
+.sixthBlock div:last-child:hover {
+  background-color: #000;
 }
 
 .grayRow {
@@ -427,10 +437,14 @@
   aspect-ratio: 1/1;
 }
 
+.greyCircles div:hover {
+  background-color: blue;
+}
+
 .seventhBlock {
   border: 6px solid #00f;
   background: #0000bf;
-  width: calc(100vw - 12px);
+  width: 100%;
   height: calc(100vh - 12px);
   display: flex;
   justify-content: center;
@@ -551,9 +565,16 @@
   flex-direction: row-reverse;
 }
 
+.eighthBlockWrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
 .eighthBlock {
   display: flex;
   border: 2px solid #fff;
+  width: calc(100% + 100% / 12);
+  animation: eighthBlock 1s linear infinite;
 }
 
 .eighthBlock div {
@@ -561,6 +582,10 @@
   width: 100%;
   border: 2px solid #fff;
   background: #d9d9d9;
+}
+
+.eighthBlock div:hover {
+  background: blue;
 }
 
 .ninethBlock {
@@ -583,7 +608,7 @@
 
 .tenthBlock {
   display: flex;
-  width: 100vw;
+  width: 100%;
 }
 
 .yellowCircleWrapper {
@@ -631,6 +656,15 @@
   aspect-ratio: 1/1;
   /* flex: 1 0 0; */
   flex-direction: column;
+}
+
+.colorHues div {
+  transition: 200ms;
+}
+
+.colorHues div:hover {
+  flex-shrink: 0.8;
+  transition: 200ms;
 }
 
 .colorHues div:nth-child(1) {
@@ -790,7 +824,7 @@
 
 .mosaicWrapper {
   display: flex;
-  width: 100vw;
+  width: 100%;
   flex-direction: row;
 }
 
@@ -820,46 +854,13 @@
   flex-shrink: 3;
 }
 
-.mosaicRow:nth-child(1)
-  .mosaicPatternContainer-L:nth-child(2)
-  div:nth-child(1) {
-  /* flex-shrink: 0.6; */
-  animation: greenCircles 1s cubic-bezier(0.83, 0, 0.17, 1) 1s infinite;
+.mosaicRow:nth-child(1) .mosaicPatternContainer-L:nth-child(2) div {
+  transition: 200ms;
 }
 
-.mosaicRow:nth-child(1)
-  .mosaicPatternContainer-L:nth-child(2)
-  div:nth-child(2) {
-  /* flex-shrink: 0.8; */
-  animation: greenCircles 1s cubic-bezier(0.83, 0, 0.17, 1) 2s infinite;
-}
-
-.mosaicRow:nth-child(1)
-  .mosaicPatternContainer-L:nth-child(2)
-  div:nth-child(3) {
-  /* flex-shrink: 0.8; */
-  animation: greenCircles 1s cubic-bezier(0.83, 0, 0.17, 1) 3s infinite;
-}
-
-.mosaicRow:nth-child(1)
-  .mosaicPatternContainer-L:nth-child(2)
-  div:nth-child(4) {
-  /* flex-shrink: 0.8; */
-  animation: greenCircles 1s cubic-bezier(0.83, 0, 0.17, 1) 4s infinite;
-}
-
-.mosaicRow:nth-child(1)
-  .mosaicPatternContainer-L:nth-child(2)
-  div:nth-child(5) {
-  /* flex-shrink: 0.8; */
-  animation: greenCircles 1s cubic-bezier(0.83, 0, 0.17, 1) 5s infinite;
-}
-
-.mosaicRow:nth-child(1)
-  .mosaicPatternContainer-L:nth-child(2)
-  div:nth-child(6) {
-  /* flex-shrink: 0.8; */
-  animation: greenCircles 1s cubic-bezier(0.83, 0, 0.17, 1) 6s infinite;
+.mosaicRow:nth-child(1) .mosaicPatternContainer-L:nth-child(2) div:hover {
+  flex-shrink: 0.6;
+  background-color: #121212;
 }
 
 .mosaicRow:nth-child(2) .mosaicPatternContainer-L:nth-child(2) {
@@ -918,6 +919,7 @@
 
 #MP2 {
   background: url("images/dog2.jpg") lightgray 50% / cover no-repeat;
+  animation: dog 600ms steps(1, end) infinite;
 }
 
 #MP3 {
@@ -948,12 +950,18 @@
   background: #7a63f3;
 }
 
+#MP4 div:hover {
+  background: #f07b2c;
+}
+
 #MP4 div :nth-child(odd) {
 }
 
 .mosaicRow:nth-child(1) .mosaicPatternContainer-L:nth-child(2) {
   background: #7a9201;
   gap: 2px;
+  display: flex;
+  flex-direction: column;
 }
 
 .mosaicRow:nth-child(1) .mosaicPatternContainer-L:nth-child(2) div {
@@ -979,6 +987,11 @@
 
 #MP6 div {
   width: 100%;
+  transition: 200ms;
+}
+
+#MP6 div:hover {
+  flex-shrink: 0.8;
 }
 
 #MP6 div:nth-child(1) {
@@ -1003,6 +1016,10 @@
 
 #MP6 div:nth-child(6) {
   background: #ac0000;
+}
+
+#MP7:hover {
+  mix-blend-mode: difference;
 }
 
 #MP7 div {
@@ -1040,7 +1057,7 @@
 
 .widthValues {
   display: flex;
-  width: 96vw;
+  width: 100%;
   justify-content: space-between;
   color: #000;
   text-align: center;
@@ -1163,7 +1180,7 @@ body {
   }
 
   .warningWrapper {
-    width: 100vw;
+    width: 100%;
   }
 
   .warning {
@@ -1187,6 +1204,19 @@ body {
 
   100% {
     background: #f07b2c;
+  }
+}
+
+@keyframes dog {
+  0% {
+    transform: scaleX(-1);
+  }
+  50% {
+    transform: scaleX(1);
+    mix-blend-mode: exclusion;
+  }
+  100% {
+    transform: scaleX(-1);
   }
 }
 
@@ -1293,6 +1323,15 @@ body {
     color: #ffffff;
     border: 2px solid #ffffff;
     background: #00f;
+  }
+}
+
+@keyframes eighthBlock {
+  0% {
+    transform: translateX(calc(100% / -13));
+  }
+  100% {
+    transform: translateX(0px);
   }
 }
 
